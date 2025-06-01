@@ -33,22 +33,202 @@
     </header>
 
     <section id="home" class="home-section">
-      <div class="home-content">
-        <div class="name-container">
-          <h1 class="animate-text">
-            <span class="greeting">Hello, I'm</span>
-            <span class="name">Vakati Jasmitha</span>
-          </h1>
-        </div>
-        <div class="title-container">
-          <p class="subtitle animate-text-delay">
-            <span class="welcome-text">Welcome to my Portfolio</span>
-          </p>
-          <div class="roles">
-            <span class="role">Full Stack Developer</span>
-          </div>
-        </div>
-      </div>
+      <style>
+        .home-section {
+          min-height: 100vh;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+          padding: 0;
+          margin: 0;
+        }
+
+        .home-content {
+          background: transparent;
+          padding: 100px 80px;
+          min-height: 100vh;
+          width: 100%;
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          position: relative;
+          z-index: 2;
+        }
+
+        .background-effects {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .gradient-sphere {
+          position: absolute;
+          width: 1000px;
+          height: 1000px;
+          background: radial-gradient(
+            circle,
+            rgba(0, 119, 181, 0.15) 0%,
+            rgba(255, 255, 255, 0) 70%
+          );
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .floating-shapes span {
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          background: rgba(0, 119, 181, 0.08);
+        }
+
+        .floating-shapes span:nth-child(1) {
+          top: 10%;
+          left: 20%;
+          width: 100px;
+          height: 100px;
+        }
+
+        .floating-shapes span:nth-child(2) {
+          top: 70%;
+          left: 80%;
+          width: 120px;
+          height: 120px;
+        }
+
+        .floating-shapes span:nth-child(3) {
+          top: 30%;
+          left: 60%;
+          width: 90px;
+          height: 90px;
+        }
+
+        .floating-shapes span:nth-child(4) {
+          top: 80%;
+          left: 30%;
+          width: 110px;
+          height: 110px;
+        }
+
+        .name-container {
+          width: 100%;
+          max-width: 1600px;
+          margin-bottom: 60px;
+        }
+
+        .name-container h1 {
+          margin-bottom: 40px;
+          width: 100%;
+        }
+
+        .greeting {
+          color: #2c3e50;
+          font-size: 3.5rem;
+          display: block;
+          margin-bottom: 30px;
+          width: 100%;
+          font-weight: 500;
+        }
+
+        .name {
+          color: #0077b5;
+          font-size: 6.5rem;
+          font-weight: bold;
+          display: block;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          width: 100%;
+          background: linear-gradient(45deg, #0077b5, #00a0dc);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .title-container {
+          width: 100%;
+          max-width: 1600px;
+        }
+
+        .subtitle {
+          color: #1a5f7a;
+          font-size: 3rem;
+          margin: 40px 0;
+          width: 100%;
+          font-weight: 500;
+        }
+
+        .roles {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 40px;
+        }
+
+        .role {
+          display: inline-block;
+          background: linear-gradient(45deg, #0077b5, #00a0dc);
+          color: white;
+          padding: 25px 60px;
+          border-radius: 50px;
+          font-size: 2.5rem;
+          font-weight: 500;
+          box-shadow: 0 4px 15px rgba(0, 119, 181, 0.2);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          min-width: 500px;
+        }
+
+        @media (max-width: 1200px) {
+          .home-content {
+            padding: 60px 40px;
+          }
+          .name {
+            font-size: 5rem;
+          }
+          .greeting {
+            font-size: 3rem;
+          }
+          .subtitle {
+            font-size: 2.5rem;
+          }
+          .role {
+            font-size: 2rem;
+            min-width: 400px;
+            padding: 20px 50px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .home-content {
+            padding: 40px 20px;
+          }
+          .greeting {
+            font-size: 2rem;
+          }
+          .name {
+            font-size: 3.5rem;
+          }
+          .subtitle {
+            font-size: 1.8rem;
+          }
+          .role {
+            font-size: 1.5rem;
+            min-width: 280px;
+            padding: 15px 30px;
+          }
+        }
+      </style>
       <div class="background-effects">
         <div class="gradient-sphere"></div>
         <div class="floating-shapes">
@@ -56,6 +236,20 @@
           <span></span>
           <span></span>
           <span></span>
+        </div>
+      </div>
+      <div class="home-content">
+        <div class="name-container">
+          <h1>
+            <span class="greeting">Hello, I'm</span>
+            <span class="name">Vakati Jasmitha</span>
+          </h1>
+        </div>
+        <div class="title-container">
+          <p class="subtitle">Welcome to my Portfolio</p>
+          <div class="roles">
+            <span class="role">Full Stack Developer</span>
+          </div>
         </div>
       </div>
     </section>
